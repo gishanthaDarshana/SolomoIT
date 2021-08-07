@@ -9,10 +9,10 @@ export default RoundedButton = props => {
         <View style={styles.containerStyle}>
             <TouchableOpacity
                 {...props}
-                style={[styles.buttonStyle,{
+                style={[styles.buttonStyle, {
                     backgroundColor: props.disabled ? AppColors.buttonDisabledColor : AppColors.mainButtonColor,
                     borderColor: props.disabled ? AppColors.buttonDisabledColor : AppColors.mainButtonColor,
-                    }]}>
+                }]}>
                 <Icon name={props.iconName} size={30} color={AppColors.mainIconColor} />
             </TouchableOpacity>
         </View>
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
         width: wp(15),
         height: wp(15),
         borderWidth: 1,
-        
+
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: wp(20),

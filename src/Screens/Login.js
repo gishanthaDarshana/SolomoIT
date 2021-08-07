@@ -25,7 +25,8 @@ export default Login = props => {
 
     const onRoundedButtonClick = () => {
         console.debug("button pressed");
-        updateLoaderVisibility(true)
+        //updateLoaderVisibility(true)
+        props.navigation.navigate('HomeScreen')
     }
 
 
@@ -33,7 +34,7 @@ export default Login = props => {
         <MainView style={styles.mainView}>
             <Loader loading = {isLoading}></Loader>
             <Title style={styles.mainTitle} type={TitleType.Title}>Welcome</Title>
-            <Title style={styles.subTitle} type={TitleType.subTitle}>Let's sign in to continue</Title>
+            <Title style={styles.subTitle} type={TitleType.SubTitle}>Let's sign in to continue</Title>
             <Input textEdit={handleUserName} value={userName} placeHolder='Email' iconName='envelope' passWordField = {false} />
             <Input textEdit={handlePassword} value={password} placeHolder='Password' iconName='lock' passWordField = {true}/>
             <RoundedButton onPress= {onRoundedButtonClick} iconName = 'arrow-right' disabled = {userName == '' || password == ''}/>
