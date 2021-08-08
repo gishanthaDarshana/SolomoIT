@@ -13,7 +13,7 @@ export default RoundedButton = props => {
                     backgroundColor: props.disabled ? AppColors.buttonDisabledColor : AppColors.mainButtonColor,
                     borderColor: props.disabled ? AppColors.buttonDisabledColor : AppColors.mainButtonColor,
                 }]}>
-                <Icon name={props.iconName} size={30} color={AppColors.mainIconColor} />
+                <Icon name={props.iconName} size={wp(7)} color={AppColors.mainIconColor} />
             </TouchableOpacity>
         </View>
     )

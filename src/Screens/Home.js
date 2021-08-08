@@ -37,9 +37,9 @@ export default Home = props => {
         address: '',
         phone: '',
         email: '',
-        toDo : 0,
-        inProgress : 0,
-        completed : 0,
+        toDo: 0,
+        inProgress: 0,
+        completed: 0,
     });
 
     const onRoundedButtonClick = () => {
@@ -47,9 +47,35 @@ export default Home = props => {
     }
 
     useEffect(() => {
+        const unsubscribe = props.navigation.addListener('tabPress', e => { 
+            //e.preventDefault(); 
+            getUserProfile();
+        });
+        
         dispatch(loadingStateAction(false));
         getUserProfile();
-    }, []);
+
+        return unsubscribe;
+    }, [props.navigation]);
+
+
+
+    const AvatarImage = () => {
+        if (profileData.profile != '') {
+            return (<ProgressiveImage
+                thumbnailSource={{ uri: profileData.profile }}
+                source={{ uri: profileData.profile }}
+                style={{
+                    width: wp('30%'),
+                    height: wp('30%'),
+                    borderRadius: wp('15%'),
+                }}
+                resizeMode="cover"
+            />)
+        } else {
+            return (<View />)
+        }
+    }
 
     getUserProfile = async () => {
         dispatch(loadingStateAction(true))
@@ -86,9 +112,9 @@ export default Home = props => {
                     address: address,
                     phone: phone,
                     email: email,
-                    toDo : toDo,
-                    inProgress : inProgress,
-                    completed : completed,
+                    toDo: toDo,
+                    inProgress: inProgress,
+                    completed: completed,
                 }
                 console.log('Profile Object : ', profileObj)
                 setProfileData(profileObj);
@@ -112,16 +138,7 @@ export default Home = props => {
                 <View style={styles.header}>
                     <Title style={styles.mainTitle} type={TitleType.Title}>My Profile</Title>
                     <Avatar>
-                        <ProgressiveImage
-                            thumbnailSource={{ uri: profileData.profile }}
-                            source={{ uri: profileData.profile }}
-                            style={{
-                                width: wp('30%'),
-                                height: wp('30%'),
-                                borderRadius: wp('15%'),
-                            }}
-                            resizeMode="cover"
-                        />
+                        <AvatarImage />
                     </Avatar>
                     <Rating
                         imageSize={hp(3)}

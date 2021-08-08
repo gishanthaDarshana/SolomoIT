@@ -17,6 +17,7 @@ return (
 }
 const styles = StyleSheet.create({
     container : {
+        borderRadius : wp(2),
         padding : 5,
         marginHorizontal : wp(Paddings.small),
         backgroundColor : AppColors.mainButtonColor,

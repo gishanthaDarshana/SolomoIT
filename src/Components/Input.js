@@ -28,7 +28,7 @@ export default Input = props => {
             console.log('is Password Field')
             return (
                 <TouchableOpacity onPress = {()=>secureEntryHandler(!issecureEntry)}>
-                    {issecureEntry === true ? <Icon name="eye" size={30} color={AppColors.textColor} /> : <Icon name="eye-slash" size={30} color={AppColors.textColor} />} 
+                    {issecureEntry === true ? <Icon name="eye" size={wp(5)} color={AppColors.textColor} /> : <Icon name="eye-slash" size={wp(5)} color={AppColors.textColor} />} 
                 </TouchableOpacity>
             );
         } else {
@@ -39,7 +39,7 @@ export default Input = props => {
 
     return (
         <View style={{ ...styles.textInputOuter, }}>
-            <Icon style={styles.ImageStyle} name={props.iconName} size={20} color={AppColors.textColor} />
+            <Icon style={styles.ImageStyle} name={props.iconName} size={wp(4)} color={AppColors.textColor} />
             <TextInput
                 {...props}
                 autoCapitalize = 'none'
@@ -70,10 +70,12 @@ const styles = StyleSheet.create({
         flex: 1,
         height: wp(Paddings.normal),
         width: wp('80%'),
-
+        fontSize : wp(5),
+        alignItems : 'flex-start'
     },
     ImageStyle: {
         paddingLeft: wp(Paddings.small),
-        paddingRight: wp(Paddings.normal)
+        paddingRight: wp(Paddings.normal),
+        width : wp(10)
     }
 })
