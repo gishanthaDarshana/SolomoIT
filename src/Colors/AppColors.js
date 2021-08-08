@@ -7,5 +7,6 @@ export default AppColors = {
     mainIconColor: "#FFFFFF",
     errorTextColor: "#BD1313",
     borderColor: "#BFBFBF",
-    buttonDisabledColor : "#D6D0D0"
+    buttonDisabledColor : "#D6D0D0",
+    listViewItemColor : "#EAE8E8",
 };

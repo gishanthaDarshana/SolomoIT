@@ -1,18 +1,27 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { View, StyleSheet } from 'react-native'
-import { createDrawerNavigator,DrawerContentScrollView,
+import { 
+    createDrawerNavigator,
+    DrawerContentScrollView,
     DrawerItemList,
     DrawerItem, } from '@react-navigation/drawer';
 import HomeTabView from '../Navigator/TabView'
 import AppColors from '../Colors/AppColors';
+import { AuthContext } from '../Context/Context';
+
 
 const Drawer = createDrawerNavigator();
 
+
+
 function CustomDrawerContent(props) {
+
+    const {logOut} = useContext(AuthContext);
+
     return (
       <DrawerContentScrollView {...props}>
         <DrawerItemList {...props} />
-        <DrawerItem label="Logout" onPress={() => alert('Link to help')} />
+        <DrawerItem label="Logout" onPress={() => {logOut()}} />
       </DrawerContentScrollView>
     );
   }

@@ -13,6 +13,8 @@ export default Title = props => {
                 return wp(fontSizeRatio.normal)
             case TitleType.MediumTitle:
                 return wp(fontSizeRatio.medium)
+            case TitleType.SmallTitle:
+                return wp(fontSizeRatio.small)
             default:
                 return wp(fontSizeRatio.normal)
         }

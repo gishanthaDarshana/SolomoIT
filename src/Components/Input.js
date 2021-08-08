@@ -42,6 +42,7 @@ export default Input = props => {
             <Icon style={styles.ImageStyle} name={props.iconName} size={20} color={AppColors.textColor} />
             <TextInput
                 {...props}
+                autoCapitalize = 'none'
                 secureTextEntry={issecureEntry}
                 onChangeText={handleInput}
                 placeholder={props.placeHolder}

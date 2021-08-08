@@ -36,7 +36,7 @@ export default CompanyList = props => {
     ]
 
     const renderItem = ({ item }) => {
-        const backgroundColor = item.id === selectedId ? AppColors.mainButtonColor : AppColors.buttonDisabledColor
+        const backgroundColor = item.id === selectedId ? AppColors.mainButtonColor : AppColors.listViewItemColor
         const textColor = item.id === selectedId ? 'white' : 'black'
 
         return (
@@ -60,9 +60,10 @@ export default CompanyList = props => {
 
     return (
         <MainView>
-            <Title style={styles.title} type={TitleType.MediumTitle}>Now select a Company</Title>
-            <CompanyHeader />
-            <FlatList data = {DATA}
+            <Title style={styles.title} type={TitleType.SubTitle}>Now select a Company</Title>
+            <CompanyHeader count = {5}/>
+            <FlatList
+            data = {DATA}
             renderItem = {renderItem}
             keyExtractor = {(item)=> item.id}
             extraData={selectedId}/>
@@ -75,4 +76,5 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: AppColors.textColor
     },
+    
 })

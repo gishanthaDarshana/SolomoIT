@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet , Text } from 'react-native'
 import AppColors from '../Colors/AppColors'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import Paddings from '../Enums/Paddings';
@@ -13,7 +13,9 @@ export default CompanyHeader = props => {
                 <Icon name='engineering' size={30} color={AppColors.mainIconColor} />
             </View>
             <View style={styles.textContainer}>
-                <Title style={styles.description} type={TitleType.SmallTitle}>We found 5 certified companies in your Selected Location</Title>
+                <Text style={styles.description} >
+                    We found <Text style = {{fontWeight : 'bold'}}>{props.count} certified companies</Text> in your Selected Location
+                </Text>
             </View>
 
         </View>
@@ -24,13 +26,13 @@ const styles = StyleSheet.create({
         backgroundColor: AppColors.mainButtonColor,
         flexDirection: 'row',
         padding: wp(Paddings.normal),
-        alignContent: 'center',
         alignItems: 'center',
-        justifyContent: 'center'
+        alignContent : 'flex-start',
+        justifyContent: 'flex-start'
     },
     leftSqure: {
-        width: 50,
-        height: 50,
+        width: wp(Paddings.large),
+        height: wp(Paddings.large),
         borderRadius: 10,
         borderColor: AppColors.textColor,
         borderWidth: 1,
@@ -40,14 +42,12 @@ const styles = StyleSheet.create({
     },
     description: {
         fontWeight: 'normal',
-        flexWrap: 'wrap',
         color: AppColors.mainBackground,
         textAlign: 'left',
+        flexWrap : 'wrap'
     },
     textContainer: {
-        alignContent: 'center',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 10
+        padding : wp(Paddings.small),
+        flex : 1
     }
 })
