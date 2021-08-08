@@ -20,6 +20,6 @@ export default Title = props => {
         }
     }
     return (
-        <Text style={{ fontSize: fontSize(props.type), ...props.style }}> {props.children}</Text>
+        <Text {...props} style={{ fontSize: fontSize(props.type), ...props.style }}> {props.children}</Text>
     )
 }

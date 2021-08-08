@@ -28,7 +28,7 @@ export default Input = props => {
             console.log('is Password Field')
             return (
                 <TouchableOpacity onPress = {()=>secureEntryHandler(!issecureEntry)}>
-                    {issecureEntry === true ? <Icon name="eye" size={wp(5)} color={AppColors.textColor} /> : <Icon name="eye-slash" size={wp(5)} color={AppColors.textColor} />} 
+                    {issecureEntry === true ? <Icon name="eye-slash" size={wp(5)} color={AppColors.textColor} /> : <Icon name="eye" size={wp(5)} color={AppColors.textColor} />} 
                 </TouchableOpacity>
             );
         } else {

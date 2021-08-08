@@ -118,8 +118,8 @@ const styles = StyleSheet.create({
     },
     errorMessage: {
         paddingLeft: wp(Paddings.normal + 1),
-        marginBottom : wp(Paddings.normal),
-        color : AppColors.errorTextColor
+        marginBottom : wp(Paddings.small),
+        color : AppColors.errorTextColor,
     },
     inputOuterStyle: {
         alignItems: 'center',

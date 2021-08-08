@@ -127,7 +127,7 @@ export default Home = props => {
             dispatch(loadingStateAction(false))
             console.error(error)
         } finally {
-            console.log('Login API call Ended');
+            console.log('Home API call Ended');
         }
     }
 
@@ -193,9 +193,13 @@ const styles = StyleSheet.create({
     circle: {
         borderRadius: 50,
         position: 'absolute',
-        top: hp('46%'),
+        top: hp('53%') - wp('20%') / 2,
         right: 10,
         elevation: 10,
+        width : wp('20%'),
+        height : wp('20%'),
+        alignItems : 'center',
+        justifyContent : 'center',
     },
     mainTitle: {
         paddingBottom: hp(Paddings.small),

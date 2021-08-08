@@ -8,13 +8,10 @@ import AppColors from '../Colors/AppColors'
 export default RatingScreen = props => {
 return (
        <MainView>
-          <Title style={styles.title} type={TitleType.MediumTitle}>Account Screen</Title>
+          
        </MainView>
        )
 }
 const styles = StyleSheet.create({
-    title: {
-        fontWeight: 'normal',
-        color: AppColors.textColor
-    },
+    
 })

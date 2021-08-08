@@ -53,7 +53,7 @@ export default HomeTabView = props => {
             
             >
             <Tab.Screen name="HomeTab" component={Home} options={{ headerShown: false }} />
-            <Tab.Screen name="Account" component={Account} />
+            <Tab.Screen name="Account" component={Account} options={{ headerShown: false }}/>
             <Tab.Screen name="CompanyList" component={CompanyList} options={{ headerShown: false }} />
             <Tab.Screen name="RatingScreen" component={RatingScreen} />
             <Tab.Screen name="TimingView" component={TimingView} />

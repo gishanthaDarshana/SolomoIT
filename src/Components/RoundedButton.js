@@ -20,8 +20,8 @@ export default RoundedButton = props => {
 }
 const styles = StyleSheet.create({
     buttonStyle: {
-        width: wp(15),
-        height: wp(15),
+        width: wp('20%'),
+        height: wp('20%'),
         borderWidth: 1,
 
         alignItems: 'center',
@@ -29,6 +29,6 @@ const styles = StyleSheet.create({
         borderRadius: wp(20),
     },
     containerStyle: {
-        alignItems: 'flex-end', margin: wp(5)
+        alignItems: 'flex-end', marginRight: wp(5)
     }
 })
