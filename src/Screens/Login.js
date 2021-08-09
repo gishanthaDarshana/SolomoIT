@@ -10,7 +10,7 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 import RoundedButton from '../Components/RoundedButton'
 import Loader from '../Components/Loader'
 import { loginAction, logoutAction, loadingStateAction, fetchStateAction } from '../Redux/Actions';
-import Services from '../Services/Services';
+
 import { useDispatch, useSelector } from 'react-redux'
 import AppColors from '../Colors/AppColors'
 import SessionManager from '../AsyncStorage/SessionManager'
