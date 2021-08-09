@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { useState ,useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import { View, StyleSheet, TextInput } from 'react-native'
 import MainView from '../Components/Wrapper'
 import Title from '../Components/Title'
@@ -9,22 +9,23 @@ import Input from '../Components/Input'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import RoundedButton from '../Components/RoundedButton'
 import Loader from '../Components/Loader'
-import { loginAction, logoutAction , loadingStateAction , fetchStateAction} from '../Redux/Actions';
+import { loginAction, logoutAction, loadingStateAction, fetchStateAction } from '../Redux/Actions';
 import Services from '../Services/Services';
-import {useDispatch, useSelector} from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import AppColors from '../Colors/AppColors'
 import SessionManager from '../AsyncStorage/SessionManager'
+import { DismissKeyboardView } from '../Components/DismissKeyboardView'
 export default Login = props => {
 
-    
+
 
     const [userName, updateUserName] = useState('');
     const [password, updatePassword] = useState('');
-    const [errorMessage , updateError] = useState('');
+    const [errorMessage, updateError] = useState('');
 
     const dispatch = useDispatch();
     const isLoading = useSelector(state => {
-        console.log('Initial isLogin State: ',state);
+        console.log('Initial isLogin State: ', state);
         return state.loginReducer.apiLoaderVisible
     })
 
@@ -62,8 +63,8 @@ export default Login = props => {
                 })
             })
             const authjson = await authResponce.json()
-            console.log('Responce Json:',authjson);
-            console.log('Status Code :',authResponce.status);
+            console.log('Responce Json:', authjson);
+            console.log('Status Code :', authResponce.status);
 
             dispatch(loadingStateAction(false));
 
@@ -85,21 +86,24 @@ export default Login = props => {
     }
 
 
-    useEffect(()=>{
+    useEffect(() => {
         dispatch(loadingStateAction(false));
-    },[]);
+    }, []);
 
 
     return (
-        <MainView style={styles.mainView}>
-            <Loader loading = {isLoading}></Loader>
-            <Title style={styles.mainTitle} type={TitleType.Title}>Welcome</Title>
-            <Title style={styles.subTitle} type={TitleType.SubTitle}>Let's sign in to continue</Title>
-            <Input textEdit={handleUserName} value={userName} placeHolder='Email' iconName='envelope' passWordField = {false} />
-            <Input textEdit={handlePassword} value={password} placeHolder='Password' iconName='lock' passWordField = {true}/>
-            <Title style={styles.errorMessage} type={TitleType.SubTitle}>{errorMessage}</Title>
-            <RoundedButton onPress= {onRoundedButtonClick} iconName = 'arrow-right' disabled = {userName == '' || password == ''}/>
-        </MainView>
+        <DismissKeyboardView style={styles.mainView}>
+            <MainView style={styles.mainView}>
+                <Loader loading={isLoading}></Loader>
+                <Title style={styles.mainTitle} type={TitleType.Title}>Welcome</Title>
+                <Title style={styles.subTitle} type={TitleType.SubTitle}>Let's sign in to continue</Title>
+                <Input textEdit={handleUserName} value={userName} placeHolder='Email' iconName='envelope' passWordField={false} />
+                <Input textEdit={handlePassword} value={password} placeHolder='Password' iconName='lock' passWordField={true} />
+                <Title style={styles.errorMessage} type={TitleType.SubTitle}>{errorMessage}</Title>
+                <RoundedButton onPress={onRoundedButtonClick} iconName='arrow-right' disabled={userName == '' || password == ''} />
+            </MainView>
+        </DismissKeyboardView>
+
     )
 }
 const styles = StyleSheet.create({
@@ -114,12 +118,12 @@ const styles = StyleSheet.create({
     },
     subTitle: {
         paddingLeft: wp(Paddings.normal + 1),
-        marginBottom : wp(Paddings.normal),
+        marginBottom: wp(Paddings.normal),
     },
     errorMessage: {
         paddingLeft: wp(Paddings.normal + 1),
-        marginBottom : wp(Paddings.small),
-        color : AppColors.errorTextColor,
+        marginBottom: wp(Paddings.small),
+        color: AppColors.errorTextColor,
     },
     inputOuterStyle: {
         alignItems: 'center',
