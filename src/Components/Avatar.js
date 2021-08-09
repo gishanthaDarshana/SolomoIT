@@ -12,8 +12,8 @@ export default Avatar = props => {
 }
 const styles = StyleSheet.create({
     container: {
-        width: wp('30%'),
-        height: wp('30%'),
+        width: wp('25%'),
+        height: wp('25%'),
         borderRadius: wp('15%'),
         borderColor: AppColors.mainButtonColor,
         backgroundColor: AppColors.mainBackground

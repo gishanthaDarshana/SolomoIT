@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
         alignContent: 'flex-start',
         textAlign: 'left',
         flexShrink: 1,
+        fontSize : wp('4%'),
         color: AppColors.textColor,
     }
 

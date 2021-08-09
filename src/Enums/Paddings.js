@@ -1,1 +1,1 @@
-export default padding = { xLarge: 20, large: 15, medium: 10, normal: 5, small: 2.5, };
+export default padding = { xLarge: 20, large: 15, medium: 10.5, normal: 5, small: 2.5, };

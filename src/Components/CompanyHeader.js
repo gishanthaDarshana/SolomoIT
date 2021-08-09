@@ -10,7 +10,7 @@ export default CompanyHeader = props => {
     return (
         <View style={styles.container}>
             <View style={styles.leftSqure}>
-                <Icon name='engineering' size={30} color={AppColors.mainIconColor} />
+                <Icon name='engineering' size={wp('7%%')} color={AppColors.mainIconColor} />
             </View>
             <View style={styles.textContainer}>
                 <Text style={styles.description} >
@@ -44,7 +44,8 @@ const styles = StyleSheet.create({
         fontWeight: 'normal',
         color: AppColors.mainBackground,
         textAlign: 'left',
-        flexWrap : 'wrap'
+        flexWrap : 'wrap',
+        fontSize : wp('4%')
     },
     textContainer: {
         padding : wp(Paddings.small),

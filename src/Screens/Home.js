@@ -66,8 +66,8 @@ export default Home = props => {
                 thumbnailSource={{ uri: profileData.profile }}
                 source={{ uri: profileData.profile }}
                 style={{
-                    width: wp('30%'),
-                    height: wp('30%'),
+                    width: wp('25%'),
+                    height: wp('25%'),
                     borderRadius: wp('15%'),
                 }}
                 resizeMode="cover"

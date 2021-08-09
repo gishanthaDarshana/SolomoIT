@@ -1,1 +1,1 @@
-export default fontSizeRatio = { xLarge: 15, large: 10, medium: 8, normal: 4, small: 3, };
+export default fontSizeRatio = { xLarge: 14, large: 8, medium: 7, normal: 3.5, small: 3, };

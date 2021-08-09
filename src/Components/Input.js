@@ -68,10 +68,10 @@ const styles = StyleSheet.create({
     },
     Textinput: {
         flex: 1,
-        height: wp(Paddings.normal),
+        height: Platform.OS == 'android' ? wp(Paddings.medium) : wp(Paddings.normal) ,
         width: wp('80%'),
         fontSize : wp(5),
-        alignItems : 'flex-start'
+        alignItems : 'flex-start',
     },
     ImageStyle: {
         paddingLeft: wp(Paddings.small),
